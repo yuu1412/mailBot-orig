@@ -14,7 +14,7 @@ client.on('message', message => {
            message: 'Help Me!'
        });}
     if (message.content === 'mj!sauce') {
-        msg.reply({files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
+        msg.reply('Hey',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
     }
 });
 
