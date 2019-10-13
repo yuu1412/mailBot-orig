@@ -8,7 +8,7 @@ const prefix = "mj!";
 var sprintActive = false;
 //const quirkList = require('quirkList') 
  
-var fs = require('fs');
+const fs = require('fs');
 var quirkList = fs.readFileSync('quirkList.txt', 'utf8').toString().split("\n");
 var promptsList = fs.readFileSync('genres.txt', 'utf8').toString().split("\n");
 
