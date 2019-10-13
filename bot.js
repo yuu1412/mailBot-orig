@@ -1,4 +1,6 @@
 const Discord = require('discord.js');
+const Enmap = require("enmap");
+const fs = require("fs");
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -7,25 +9,26 @@ client.on('ready', () => {
 
 const prefix = "mj!";
 
-client.on('message', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-    
-    if (command === "ping") {message.reply('pong');}
-    if (command === "foo") {message.channel.send('bar');}
-    if (command === "help") {message.channel.send('Instead of an actual help file, you should go to <https://toyhou.se/1787487> for the time being.');}
-    
-    if (command === "sauce") {
-        message.channel.send('Hey',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
-        message.channel.send('If you don\'t know where the image came from, please try a reverse image search like Google, TinEye, ImgOps, or SauceNao!');
-    }
-    if(command === "say"){
-        let text = args.join(" ");
-        message.delete();
-        message.channel.send(text);
-    }
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, event.bind(null, client));
+  });
+});
+
+client.commands = new Enmap();
+
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    let commandName = file.split(".")[0];
+    console.log(`Attempting to load command ${commandName}`);
+    client.commands.set(commandName, props);
+  });
 });
 
 // THIS  MUST  BE  THIS  WAY
