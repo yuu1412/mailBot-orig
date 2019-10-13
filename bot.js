@@ -6,12 +6,10 @@ client.on('ready', () => {console.log('I am ready!');});
 const prefix = "mj!";
 //const quirkList = ["Fire","Water","Earth","Wind","Plant","Celestial","Weather","Temperature","Metal","Sound","Animal","Mutation","Telekinetic","Telekinesis","Time","Memory","Vibration","Speed","Vehicle","Transformatiton","Monster","Star","Moon","Size Changing","Health","Teleportation","Matter Changing","Movement","NSFW","Manipulation","Mind","Copy","Crystal","Mineral","Food","Hardening","Creation","Laser","Destruction","Basic"];
 var sprintActive = false;
-const quirkList = require('quirkList') 
-  
-quirkList.readFile('quirkList.txt', (err, data) => { 
-    if (err) throw err; 
-    console.log(data.toString()); 
-}) 
+//const quirkList = require('quirkList') 
+ 
+var fs = require('fs');
+var quirkList = fs.readFileSync('quirkList', 'utf8');
 
 /*
 fuction sprintStart(){
