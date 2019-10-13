@@ -5,8 +5,7 @@ client.on('ready', () => {console.log('I am ready!');});
 
 const prefix = "mj!";
 //const quirkList = ["Fire","Water","Earth","Wind","Plant","Celestial","Weather","Temperature","Metal","Sound","Animal","Mutation","Telekinetic","Telekinesis","Time","Memory","Vibration","Speed","Vehicle","Transformatiton","Monster","Star","Moon","Size Changing","Health","Teleportation","Matter Changing","Movement","NSFW","Manipulation","Mind","Copy","Crystal","Mineral","Food","Hardening","Creation","Laser","Destruction","Basic"];
-var sprintActive = false;
-//const quirkList = require('quirkList') 
+//var sprintActive = false;
  
 var fs = require('fs');
 var quirkList = fs.readFileSync('quirkList.txt', 'utf8').toString().split("\n");
@@ -50,15 +49,17 @@ client.on('message', message => {
 		message.delete();
 		message.channel.send(text);
 	}
-	/*else if (command === "prompt"){
-		let num = Math.floor(Math.random()*promptsList.length);
-		message.reply('maybe consider a '+ promptsList[num] + ' AU?');
+	else if (command === "prompt"){
+		//let num = Math.floor(Math.random()*promptsList.length);
+		//message.reply('maybe consider a '+ promptsList[num] + ' AU?');
+		message.reply('I\'ll give you a prompt in the future.');
 	}
 	else if (command === "prompts"){
-		let numA = Math.floor(Math.random()*promptsList.length);
-		let numB = Math.floor(Math.random()*promptsList.length);
-		message.reply('maybe consider a '+ promptsList[numA] + ' and ' + promptsList[numB] + ' AU?');
-	} */
+		//let numA = Math.floor(Math.random()*promptsList.length);
+		//let numB = Math.floor(Math.random()*promptsList.length);
+		//message.reply('maybe consider a '+ promptsList[numA] + ' and ' + promptsList[numB] + ' AU?');
+		message.reply('I\'ll give you two prompts in the future.');
+	} 
 	
 	else if (command === "roll"){
 		let text = args.join(" ");
