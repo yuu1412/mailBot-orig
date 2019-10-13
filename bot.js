@@ -9,7 +9,7 @@ var sprintActive = false;
 //const quirkList = require('quirkList') 
  
 var fs = require('fs');
-var quirkList = fs.readFileSync('quirkList', 'utf8');
+var quirkList = fs.readFileSync('quirkList.txt', 'utf8');
 
 /*
 fuction sprintStart(){
