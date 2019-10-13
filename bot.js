@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = 'mj!';
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -12,6 +13,9 @@ client.on('message', message => {
            to: channelID,
            message: 'Help Me!'
        });}
+    if (message.content === 'mj!sauce') {
+        msg.reply({files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
