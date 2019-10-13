@@ -17,20 +17,16 @@ client.on('message', message => {
     
     if (command === "ping") {message.reply('pong');}
     if (command === "foo") {message.channel.send('bar');}
-    if (command === "help") {message.channel.send('Instead of an actual help file, you should go to <https://toyhou.se/1787487> for the time being.');}
-    
-    if (command === "sauce") {
-        message.channel.send('Hey',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
-        message.channel.send('If you don\'t know where the image came from, please try a reverse image search like Google, TinEye, ImgOps, or SauceNao!');
-    }
+    if (command === "help") {message.channel.send('Instead of an actual help file, you should go to https://toyhou.se/1787487 for the time being.');}
+    if (command === "sauce") {message.channel.send('If you don\'t know where the image came from, please try a reverse image search like Google, TinEye, ImgOps, or SauceNao!',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});}
     if(command === "say"){
         let text = args.join(" ");
         message.delete();
         message.channel.send(text);
     }
+    
     if (command === "roll"){
                 message.channel.send('Eventually I will roll dice for you.');
-
     }
     if (command === "quirkpls" || command == "quirkplz"){
                 message.channel.send('Eventually I will choose a quirk for you.');
