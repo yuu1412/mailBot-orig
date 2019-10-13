@@ -8,11 +8,39 @@ const prefix = "mj!";
 var sprintActive = false;
 //const quirkList = require('quirkList') 
  
-var fs = require('fs');
-var quirkList = fs.readFileSync('quirkList.txt', 'utf8').toString().split("\n");
-fs.unlinkSync('quirkList.txt');
-var promptsList = fs.readFileSync('genres.txt', 'utf8').toString().split("\n");
-fs.unlinkSync('genres.txt');
+//var fs = require('fs');
+var quirkList; // = fs.readFileSync('quirkList.txt', 'utf8').toString().split("\n");
+var promptsList; // = fs.readFileSync('genres.txt', 'utf8').toString().split("\n");
+
+const fs = require('fs');
+
+function readFromFile(file) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(file, function (err, data) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else {
+                resolve(JSON.parse(data));
+            }
+        });
+    });
+}
+
+const promises = [
+    readFromFile('./files/quirkList.txt'),
+    readFromFile('./files/genres.txt')
+];
+
+Promise.all(promises).then(result => {
+    console.log(result);
+    quirkList = result[0];
+    promptsList = result[1];
+    // do more stuff
+});
+
+
 
 /*
 fuction sprintStart(){
