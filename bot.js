@@ -5,12 +5,12 @@ client.on('ready', () => {
     console.log('I am ready!');
 }); 
 
-let prefix = "mj!";
+const prefix = "mj!";
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     
     if (command === "ping") {message.reply('pong');}
