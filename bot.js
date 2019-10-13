@@ -8,6 +8,7 @@ client.on('ready', () => {
 }); 
 
 const prefix = "mj!";
+const quirkList = ["Fire","Water","Earth","Wind","Plant","Celestial","Weather","Temperature","Metal","Sound","Animal","Mutation","Telekinetic","Telekinesis","Time","Memory","Vibration","Speed","Vehicle","Transformatiton","Monster","Star","Moon","Size Changing","Health","Teleportation","Matter Changing","Movement","NSFW","Manipulation","Mind","Copy","Crystal","Mineral","Food","Hardening","Creation","Laser","Destruction","Basic"];
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -33,13 +34,15 @@ client.on('message', message => {
     }
     if (command === "quirkpls" || command == "quirkplz"){
         //chose from a list of quirk types
-        let chosenQuirk = quirkList[Math.floor(Math.random() * quirkList.length)];
-                message.channel.send('Eventually I will choose a quirk for you.');
+		let num = Math.floor(Math.random()*quirkList.length);
+        let chosenQuirk = quirkList[num];
+        //message.channel.send('Eventually I will choose a quirk for you.');
         message.reply('you have a ' + chosenQuirk + ' quirk!');
     }
     if (command === "quirkfactor"){
-                message.channel.send('Eventually I will choose two quirks for you.');
-                //message.reply('you have a ' + chosenQuirkA + ' or a ' + chosenQuirkB + ' quirk!');
+		let numA = Math.floor(Math.random()*quirkList.length);
+		let numB = Math.floor(Math.random()*quirkList.length);
+		message.reply('you have a ' + quirkList[numA] + ' or a ' +  quirkList[numB] + ' quirk!');
     }
     if (command === "scripture"){
                 message.channel.send('Eventually I will quote scripture for you.');
