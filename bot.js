@@ -50,15 +50,15 @@ client.on('message', message => {
 		message.channel.send(text);
 	}
 	else if (command === "prompt"){
-		//let num = Math.floor(Math.random()*promptsList.length);
-		//message.reply('maybe consider a '+ promptsList[num] + ' AU?');
-		message.reply('I\'ll give you a prompt in the future.');
+		let num = Math.floor(Math.random()*promptsList.length);
+		message.reply('maybe consider a '+ promptsList[num] + ' AU?');
+		//message.reply('I\'ll give you a prompt in the future.');
 	}
 	else if (command === "prompts"){
-		//let numA = Math.floor(Math.random()*promptsList.length);
-		//let numB = Math.floor(Math.random()*promptsList.length);
-		//message.reply('maybe consider a '+ promptsList[numA] + ' and ' + promptsList[numB] + ' AU?');
-		message.reply('I\'ll give you two prompts in the future.');
+		let numA = Math.floor(Math.random()*promptsList.length);
+		let numB = Math.floor(Math.random()*promptsList.length);
+		message.reply('maybe consider a '+ promptsList[numA] + ' and ' + promptsList[numB] + ' AU?');
+		//message.reply('I\'ll give you two prompts in the future.');
 	} 
 	
 	else if (command === "roll"){
@@ -82,7 +82,7 @@ client.on('message', message => {
 		//if (sprintActive == true){message.channel.send('There are ' + timer + ' minutes left to the sprint.');}
 		//else {message.channel.send('There is no active sprint at this time.');}
 	}
-	else{message.reply('you failed. ' + command + ' wasn\'t valid, dumbass.');}
+	else{message.reply('you failed. ' + command + ' wasn\'t a valid command, dumbass.');}
 	
 });
 
