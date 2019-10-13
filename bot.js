@@ -8,7 +8,7 @@ const prefix = "mj!";
 var sprintActive = false;
 //const quirkList = require('quirkList') 
  
-const fs = require('fs');
+var fs = require('fs');
 var quirkList = fs.readFileSync('quirkList.txt', 'utf8').toString().split("\n");
 //var promptsList = fs.readFileSync('genres.txt', 'utf8').toString().split("\n");
 
@@ -50,11 +50,11 @@ client.on('message', message => {
 		message.delete();
 		message.channel.send(text);
 	}
-	/*else if (command == "prompt"){
+	/*else if (command === "prompt"){
 		let num = Math.floor(Math.random()*promptsList.length);
 		message.reply('maybe consider a '+ promptsList[num] + ' AU?');
 	}
-	else if (command == "prompts"){
+	else if (command === "prompts"){
 		let numA = Math.floor(Math.random()*promptsList.length);
 		let numB = Math.floor(Math.random()*promptsList.length);
 		message.reply('maybe consider a '+ promptsList[numA] + ' and ' + promptsList[numB] + ' AU?');
