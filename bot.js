@@ -9,7 +9,8 @@ var sprintActive = false;
 //const quirkList = require('quirkList') 
  
 var fs = require('fs');
-var quirkList = fs.readFileSync('quirkList.txt', 'utf8').toString().split("\n");
+var quirkList = fs.readFileSync('files\quirkList.txt', 'utf8').toString().split("\n");
+var promptsList = fs.readFileSync('files\genres.txt', 'utf8').toString().split("\n");
 
 /*
 fuction sprintStart(){
@@ -48,6 +49,15 @@ client.on('message', message => {
 		message.delete();
 		message.channel.send(text);
 	}
+	else if (command == "prompt"){
+		let num = Math.floor(Math.random()*promptsList.length);
+		message.reply('maybe consider a '+ promptsList[num] + ' AU?');
+	}
+	else if (command == "prompts"){
+		let numA = Math.floor(Math.random()*promptsList.length);
+		let numB = Math.floor(Math.random()*promptsList.length);
+		message.reply('maybe consider a '+ promptsList[numA] + ' and ' + promptsList[numB] + ' AU?');
+	} 
 	
 	else if (command === "roll"){
 		let text = args.join(" ");
