@@ -6,26 +6,12 @@ client.on('ready', () => {
 }); 
 
 client.on('message', message => {
-    if (message.substring(0, 1) == 'mj!') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-        
-        args = args.splice(1);
-        switch(cmd) {
-            // !ping
-            case 'ping':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Pong!'
-                });
-            case 'help':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Please visit <https://toyhou.se/1787487> for documentation!'
-                });
-            break;
-            // Just add any case commands if you want to..
-         }
+   if (message.content === 'mj!ping') {message.reply('pong');}
+   if (message.content === 'mj!help') {
+       sendMessage({
+           to: channelID,
+           message: 'Help Me!'
+       });}
 });
 
 // THIS  MUST  BE  THIS  WAY
