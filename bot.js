@@ -39,7 +39,7 @@ client.on('message', message => {
 		message.reply('you have a ' + chosenQuirk + ' quirk!');
 	}
 	else if (command === "sauce") {message.channel.send('If you don\'t know where the image came from, please try a reverse image search like Google, TinEye, ImgOps, or SauceNao!',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});}
-	if(command === "say"){
+	else if(command === "say"){
 		let text = args.join(" ");
 		message.delete();
 		message.channel.send(text);
@@ -66,7 +66,7 @@ client.on('message', message => {
 		//if (sprintActive == true){message.channel.send('There are ' + timer + ' minutes left to the sprint.');}
 		//else {message.channel.send('There is no active sprint at this time.');}
 	}
-	else{message.reply('you failed. That wasn\'t valid, dumbass.');}
+	else{message.reply('you failed. ' + command + ' wasn\'t valid, dumbass.');}
 	
 });
 
