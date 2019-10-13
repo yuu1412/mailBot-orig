@@ -26,13 +26,19 @@ client.on('message', message => {
     }
     
     if (command === "roll"){
+        let text = args.join(" ");
+        //let diceNum = text.
+        //let diceType
                 message.channel.send('Eventually I will roll dice for you.');
     }
     if (command === "quirkpls" || command == "quirkplz"){
+        //chose from a list of quirk types
                 message.channel.send('Eventually I will choose a quirk for you.');
+        //message.reply('you have a ' + chosenQuirk + ' quirk!');
     }
     if (command === "quirkfactor"){
                 message.channel.send('Eventually I will choose two quirks for you.');
+                //message.reply('you have a ' + chosenQuirkA + ' or a ' + chosenQuirkB + ' quirk!');
     }
     if (command === "scripture"){
                 message.channel.send('Eventually I will quote scripture for you.');
