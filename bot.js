@@ -8,13 +8,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
    if (message.content === 'mj!ping') {message.reply('pong');}
-   if (message.content === 'mj!help') {
-       sendMessage({
-           to: channelID,
-           message: 'Help Me!'
-       });}
-    if (message.content === 'mj!sauce') {
-        msg.reply('Hey',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
+   if (message.content === 'mj!sauce') {
+        message.channel.send('Hey',{files:       ['https://file.toyhou.se/images/6364892_plnF1TceCBHi3Bg.png']});
     }
 });
 
