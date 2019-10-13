@@ -7,6 +7,7 @@ const prefix = "mj!";
 const quirkList = ["Fire","Water","Earth","Wind","Plant","Celestial","Weather","Temperature","Metal","Sound","Animal","Mutation","Telekinetic","Telekinesis","Time","Memory","Vibration","Speed","Vehicle","Transformatiton","Monster","Star","Moon","Size Changing","Health","Teleportation","Matter Changing","Movement","NSFW","Manipulation","Mind","Copy","Crystal","Mineral","Food","Hardening","Creation","Laser","Destruction","Basic"];
 var sprintActive = false;
 
+/*
 fuction sprintStart(){
 	sprintActive = true;
 	message.channel.send('The sprint has begun! Get writing!');
@@ -14,6 +15,7 @@ fuction sprintStart(){
 function sprintEnd(){
 	sprintActive = false;
 }
+*/
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
