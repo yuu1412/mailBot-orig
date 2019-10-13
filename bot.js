@@ -29,8 +29,8 @@ function readFromFile(file) {
 }
 
 const promises = [
-    readFromFile('./files/quirkList.txt'),
-    readFromFile('./files/genres.txt')
+    readFromFile('quirkList.txt'),
+    readFromFile('genres.txt')
 ];
 
 Promise.all(promises).then(result => {
