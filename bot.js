@@ -33,8 +33,9 @@ client.on('message', message => {
     }
     if (command === "quirkpls" || command == "quirkplz"){
         //chose from a list of quirk types
+        let chosenQuirk = quirkList[Math.floor(Math.random() * quirkList.length)];
                 message.channel.send('Eventually I will choose a quirk for you.');
-        //message.reply('you have a ' + chosenQuirk + ' quirk!');
+        message.reply('you have a ' + chosenQuirk + ' quirk!');
     }
     if (command === "quirkfactor"){
                 message.channel.send('Eventually I will choose two quirks for you.');
