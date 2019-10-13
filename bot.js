@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('ready', () => {client.user.setActivity("the world burn", {type: "WATCHING"})}); 
+client.on('ready', () => {console.log('I am ready!');});
 
 const prefix = "mj!";
 //var sprintActive = false;
