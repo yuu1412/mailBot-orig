@@ -9,6 +9,8 @@ below is a list of all commands currently coded on mailBot, along with their sta
 - [x] *foo* - mail replies with "bar!"
 - [x] *help* - mail says to visit his [ToyHou.se](https://toyhou.se/1787487) for help.
 - [x] *ping* - mail responds to you with "pong"
+- [x] *prompt* - mail responds with a prompt.
+- [x] *prompts* - mail responds with a two part prompt.
 - [x] *quirkfactor* - mail responds to you with two quirks.
 - [x] *quirkpls* or *quirkplz* - mail responds to you with a quirk.
 - [ ] *roll* - mail will roll dice for you.
